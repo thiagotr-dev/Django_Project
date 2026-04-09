@@ -1,0 +1,19 @@
+<h2>Bem-vindo</h2>
+<p>{{ user.username }}</p>
+<p>{{ user.email }}</p>
+<p>ID: {{ user.id }}</p>
+
+<a href="/logout/">Logout</a>
+
+<h3>Adicionar Produto</h3>
+<form method="post" action="/add/">{% csrf_token %}
+<input name="name" placeholder="Produto">
+<input name="quantity" type="number">
+<button>Adicionar</button>
+</form>
+
+<ul>
+{% for p in products %}
+<li>{{ p.name }} - {{ p.quantity }} <a href="/remove/{{ p.id }}">Remover</a></li>
+{% endfor %}
+</ul>

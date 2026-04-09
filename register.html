@@ -1,0 +1,9 @@
+<h2>Cadastro</h2>
+<form method="post">{% csrf_token %}
+<input name="username" placeholder="Usuário"><br>
+<input name="email" placeholder="Email"><br>
+<input type="password" name="password" placeholder="Senha"><br>
+<input type="password" name="confirm" placeholder="Confirmar"><br>
+<button>Cadastrar</button>
+</form>
+<p>{{ error }}</p>
